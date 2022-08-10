@@ -1,5 +1,10 @@
+<%@page import="model.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+       <%
+	request.setCharacterEncoding("UTF-8");
+%>
+<jsp:useBean id="member" class="model.vo.MemberVO" scope="session"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,19 +17,21 @@
 	<input type="hidden" name="action" value="insert">
 	<table border="1">
 		<tr>
-		<td>제목</td>
-		<td><input type="text" name="title" required></td>
+			<td>제목</td>
+			<td><input type="text" name="title" required></td>
 		</tr>
 		<tr>
-		<td>내용</td>
-		<td><input type="text" name="content" required></td>
+			<td>내용</td>
+			<td><input type="text" name="content" required></td>
 		</tr>
 		<tr>
-		<td>작성자</td>
-		<td><input type="text" name="writer" required></td>
+			<td>작성자</td>
+			<td><input type="text" name="writer" value="<%=member.getMid()%>" readonly required></td>
 		</tr>
 		<tr>
-		<td colspan="2" align="right" ><input type="submit" value="작성하기"></td>
+			<td colspan="2" align="right" >
+				<input type="submit" value="작성하기">
+			</td>
 		</tr>
 
 

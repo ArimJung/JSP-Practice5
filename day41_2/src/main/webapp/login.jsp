@@ -26,6 +26,8 @@
 
 </form>
 
+<hr>
+<a href="reg.jsp">회원가입 하기</a>
 
 </body>
 </html>
